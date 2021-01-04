@@ -7,7 +7,7 @@ package contactmanagementsoftware;
 
 /**
  *
- * @author ritz619
+ * @author Id
  */
 public class AcquaintanceFactory implements Factory{
 
