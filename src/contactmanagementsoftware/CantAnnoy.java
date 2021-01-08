@@ -5,11 +5,13 @@
  */
 package contactmanagementsoftware;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Mohid Khan
  */
-public class CantAnnoy implements Annoy {
+public class CantAnnoy implements Annoy, Serializable {
 
     @Override
     public String annoy() {
