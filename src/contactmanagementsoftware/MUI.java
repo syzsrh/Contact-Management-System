@@ -410,18 +410,20 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
                                 .addComponent(jButton8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(27, 27, 27))
-                    .addComponent(jLabel2)
+                        .addGap(73, 73, 73))
                     .addGroup(Main_MenuLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel3)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(Main_MenuLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGroup(Main_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Main_MenuLayout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(59, 59, 59)
+                                .addComponent(jLabel3)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(Main_MenuLayout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane2))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addContainerGap())))
         );
 
         Main_MenuLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {addContact, deleteContact, detailOfContact, editContact, jButton4, jButton7, jButton8, searchContact});
@@ -429,25 +431,21 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
         Main_MenuLayout.setVerticalGroup(
             Main_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Main_MenuLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Main_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Main_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(deleteContact)
-                        .addComponent(addContact))
-                    .addGroup(Main_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(searchContact)
-                        .addComponent(editContact)))
                 .addGap(18, 18, 18)
-                .addGroup(Main_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(Main_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton4)
-                        .addComponent(jButton8))
-                    .addGroup(Main_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(detailOfContact)
-                        .addComponent(jButton7)))
-                .addGap(49, 49, 49)
+                .addGroup(Main_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addContact)
+                    .addComponent(deleteContact)
+                    .addComponent(editContact)
+                    .addComponent(searchContact))
+                .addGap(18, 18, 18)
+                .addGroup(Main_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(detailOfContact)
+                    .addComponent(jButton7)
+                    .addComponent(jButton8)
+                    .addComponent(jButton4))
+                .addGap(33, 33, 33)
                 .addGroup(Main_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel3))
@@ -858,12 +856,15 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
             return;
         }
         String Mobile = mobile.getText();
-        if (!MobileNoChecker.MobileNoChecker(Mobile)) {
+        String Email = email.getText();
+        EmailChecker emailcheck = new EmailChecker(Email);
+        MobileNoChecker numcheck = new MobileNoChecker(Mobile);
+        CheckerFacade check = new CheckerFacade(numcheck, emailcheck);
+        if (!check.CheckMobile()) {
             JOptionPane.showMessageDialog(this, "Enter a valid mobile number (6-15 digits)");
             return;
         }
-        String Email = email.getText();
-        if (!Email.contains("@")) {
+        if (!check.CheckEmail()) {
             JOptionPane.showMessageDialog(this, "Enter a valid email");
             return;
         }
@@ -1036,6 +1037,7 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
