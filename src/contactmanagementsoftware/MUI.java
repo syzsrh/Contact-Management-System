@@ -832,6 +832,7 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
         }
         try {
             SerializationUtil.serialize(acquaintances, s);
+            System.out.println(acquaintances.toString());
         } catch (IOException e) {
             return;
         }

@@ -25,7 +25,6 @@ public class SerializationUtil implements Serializable{
         FileOutputStream fos = new FileOutputStream(fileName);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(obj);
-
         fos.close();
     }
 
