@@ -9,18 +9,28 @@ package contactmanagementsoftware;
  *
  * @author ritz619
  */
-public class MobileNoChecker {
-    public static boolean MobileNoChecker(String str) {
+public class MobileNoChecker{
+    public boolean MobileNoChecker() {
         int x;
-        if (str.isEmpty() || str.length() < 6 || str.length() > 15) {
+        if (number.isEmpty() || number.length() < 6 || number.length() > 15) {
             return false;
         }
-        for (int j = 0; j < str.length(); j++) {
-            x = (int) str.charAt(j);
+        for (int j = 0; j < number.length(); j++) {
+            x = (int) number.charAt(j);
             if (x < 48 || x > 57) {
                 return false;
             }
         }
         return true;
+    }
+    
+    String number;
+    
+    public MobileNoChecker(String number) {
+        this.number = number;
+    }
+    
+    public String getNumber() {
+        return number;
     }
 }
