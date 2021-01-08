@@ -23,6 +23,8 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
      * Creates new form MUI
      */
     private AcquaintanceFactory Acquaintancesfactory;
+    private FriendFactory Friendsfactory;
+    private FactoryProducer Factoryproducer;
     private static ArrayList<ArrayList<Acquaintances>> acquaintances;
     private static ArrayList<Acquaintances> personalFriends;
     private static ArrayList<Acquaintances> relatives;
@@ -37,6 +39,7 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
     private String op;
     private String searchString;
     private static MUI manager;
+
 
     private MUI() {
         initComponents();
@@ -891,8 +894,9 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
                     return;
                 }
                 PersonalFriends personalF;
+                AbstractFactory friendFactory = FactoryProducer.getFactory(true);
                 if (addOrEditFlag) {
-                    personalF = (PersonalFriends) Acquaintancesfactory.createAcquaintance("PersonalFriends");
+                    personalF = (PersonalFriends) friendFactory.createAcquaintances("PersonalFriends");
                 } else {
                     personalF = (PersonalFriends) acquaintances.get(categoryIndex).get(ArrayListIndex);
                 }
@@ -927,8 +931,9 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
                     return;
                 }
                 Relatives rel;
+                AbstractFactory acquaintanceFactory = FactoryProducer.getFactory(false);
                 if (addOrEditFlag) {
-                    rel = (Relatives) Acquaintancesfactory.createAcquaintance("Relatives");
+                    rel = (Relatives) acquaintanceFactory.createAcquaintances("Relatives");
                 } else {
                     rel = (Relatives) acquaintances.get(categoryIndex).get(ArrayListIndex);
                 }
@@ -950,8 +955,9 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
                     return;
                 }
                 ProfessionalFriends proF;
+                AbstractFactory profriendFactory = FactoryProducer.getFactory(true);
                 if (addOrEditFlag) {
-                    proF = (ProfessionalFriends) Acquaintancesfactory.createAcquaintance("ProfessionalFriends");
+                    proF = (ProfessionalFriends) profriendFactory.createAcquaintances("ProfessionalFriends");
                 } else {
                     proF = (ProfessionalFriends) acquaintances.get(categoryIndex).get(ArrayListIndex);
                 }
@@ -982,8 +988,9 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
                     return;
                 }
                 CasualAcquaintances ca;
+                AbstractFactory casualacqFactory = FactoryProducer.getFactory(false);
                 if (addOrEditFlag) {
-                    ca = (CasualAcquaintances) Acquaintancesfactory.createAcquaintance("CasualAcquaintances");
+                    ca = (CasualAcquaintances) casualacqFactory.createAcquaintances("CasualAcquaintances");
                 } else {
                     ca = (CasualAcquaintances) acquaintances.get(categoryIndex).get(ArrayListIndex);
                 }
