@@ -9,6 +9,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -811,7 +813,8 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
         if (result == JFileChooser.APPROVE_OPTION) {
             File selectedFile = fileChooser.getSelectedFile();
             try {
-                temp = (ArrayList<ArrayList<Acquaintances>>) SerializationUtil.deserialize(selectedFile);
+                FileConvert Su= new SerializationUtil();
+                temp = (ArrayList<ArrayList<Acquaintances>>) Su.readContact(selectedFile);
             } catch (ClassNotFoundException | IOException e) {
                 JOptionPane.showMessageDialog(this, "Error");
                 return;
@@ -861,11 +864,25 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
             }
         }
         try {
-            SerializationUtil.serialize(acquaintances, s);
+            FileConvert Su= new SerializationUtil();
+            Su.saveContact(acquaintances, s);
+//            SerializationUtil.serialize(acquaintances, s);
         } catch (IOException e) {
             return;
         }
         JOptionPane.showMessageDialog(this, s + " saved successfully");
+        int j =JOptionPane.showConfirmDialog(this, "Do you want to export this ser file as text file as well?");
+        if(j==JOptionPane.YES_OPTION){
+            ContactList c =new ContactList();
+            FileConvert contact= new ContactAdapter(c);
+            try {
+                contact.saveContact(acquaintances, "contact.txt");
+            } catch (IOException ex) {
+                return;
+            }
+            JOptionPane.showMessageDialog(this, "contact.text saved sucessfully");
+        }
+        
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
