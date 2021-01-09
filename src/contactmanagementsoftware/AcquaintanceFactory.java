@@ -9,17 +9,28 @@ package contactmanagementsoftware;
  *
  * @author Id
  */
-public class AcquaintanceFactory implements Factory{
+public class AcquaintanceFactory extends AbstractFactory{
+
+//    @Override
+//    public Acquaintances createAcquaintance(String type) {
+//        if (type.equalsIgnoreCase("CasualAcquaintances")) {
+//            return new CasualAcquaintances();
+//        } else if (type.equalsIgnoreCase("PersonalFriends")) {
+//            return new PersonalFriends();
+//        } else if (type.equalsIgnoreCase("ProfessionalFriends")) {
+//            return new ProfessionalFriends(); 
+//        } else if (type.equalsIgnoreCase("Relatives")) {
+//            return new Relatives();
+//        }
+//        return null;
+//    }
 
     @Override
-    public Acquaintances createAcquaintance(String type) {
+    public Acquaintances createAcquaintances(String type) {
         if (type.equalsIgnoreCase("CasualAcquaintances")) {
             return new CasualAcquaintances();
-        } else if (type.equalsIgnoreCase("PersonalFriends")) {
-            return new PersonalFriends();
-        } else if (type.equalsIgnoreCase("ProfessionalFriends")) {
-            return new ProfessionalFriends(); 
-        } else if (type.equalsIgnoreCase("Relatives")) {
+        }
+        else if (type.equalsIgnoreCase("Relatives")) {
             return new Relatives();
         }
         return null;
