@@ -5,17 +5,20 @@
  */
 package contactmanagementsoftware;
 
-import java.io.Serializable;
-
 /**
  *
- * @author Mohid Khan
+ * @author sarahsyazwina
  */
-public class CantAnnoy implements Annoy, Serializable {
-
-    @Override
-    public String annoy() {
-        return "Not Annoying.";
+public class ContactEmail implements Contact{
+    
+    private Action a;
+    
+    public ContactEmail(Action a){
+        this.a = a;
     }
 
+    @Override
+    public String execute(Acquaintances c) {
+        return a.email(c);
+    }
 }

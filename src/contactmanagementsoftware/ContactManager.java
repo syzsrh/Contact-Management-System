@@ -7,8 +7,16 @@ package contactmanagementsoftware;
 
 /**
  *
- * @author ritz619
+ * @author sarahsyazwina
  */
-public interface Annoy {
-    public String annoy();
+public class ContactManager {
+    Contact c;
+    
+    public void setContact(Contact c){
+        this.c = c;
+    }
+    
+    public String process(Acquaintances a){
+        return c.execute(a);
+    }
 }

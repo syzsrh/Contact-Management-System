@@ -5,17 +5,10 @@
  */
 package contactmanagementsoftware;
 
-import java.io.Serializable;
-
 /**
  *
  * @author ritz619
  */
-public class CanAnnoy implements Annoy, Serializable {
-
-    @Override
-    public String annoy() {
-        return "Relatives are annoying.";
-    }
-
+public interface Test {
+    public String annoy();
 }
