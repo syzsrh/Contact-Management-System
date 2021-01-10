@@ -29,7 +29,6 @@ public class ContactList implements Serializable{
                         myWriter.write("Name : "+ac.get(i).get(j).getName()+ System.getProperty("line.separator"));
                         myWriter.write("Mobile No. : "+ac.get(i).get(j).getMobileNo()+ System.getProperty("line.separator"));
                         myWriter.write("Email : "+ac.get(i).get(j).getEmail()+ System.getProperty("line.separator"));
-                        myWriter.write("Annoyance : "+ac.get(i).get(j).tryToAnnoy()+ System.getProperty("line.separator"));
                         myWriter.write("Specific events: "+perF.getEvents()+ System.getProperty("line.separator"));
                         myWriter.write("First Acquaintance context: "+perF.getAContext()+ System.getProperty("line.separator"));
                         myWriter.write("First Acquaintance date: "+perF.getADate()+ System.getProperty("line.separator"));
@@ -40,7 +39,6 @@ public class ContactList implements Serializable{
                         myWriter.write("Name : "+ac.get(i).get(j).getName()+ System.getProperty("line.separator"));
                         myWriter.write("Mobile No. : "+ac.get(i).get(j).getMobileNo()+ System.getProperty("line.separator"));
                         myWriter.write("Email : "+ac.get(i).get(j).getEmail()+ System.getProperty("line.separator"));
-                        myWriter.write("Annoyance : "+ac.get(i).get(j).tryToAnnoy()+ System.getProperty("line.separator"));
                         myWriter.write("Relatives Birthday: "+r.getBDate()+ System.getProperty("line.separator"));
                         myWriter.write("Last met date: "+r.getLDate()+ System.getProperty("line.separator"));
                         myWriter.write("");
@@ -51,7 +49,6 @@ public class ContactList implements Serializable{
                         myWriter.write("Name : "+ac.get(i).get(j).getName()+ System.getProperty("line.separator"));
                         myWriter.write("Mobile No. : "+ac.get(i).get(j).getMobileNo()+ System.getProperty("line.separator"));
                         myWriter.write("Email : "+ac.get(i).get(j).getEmail()+ System.getProperty("line.separator"));
-                        myWriter.write("Annoyance : "+ac.get(i).get(j).tryToAnnoy()+ System.getProperty("line.separator"));
                         myWriter.write("Common Interests : "+pF.getCommonInterests()+ System.getProperty("line.separator"));
                         myWriter.write("");
                         myWriter.write(System.getProperty("line.separator"));
@@ -61,7 +58,6 @@ public class ContactList implements Serializable{
                         myWriter.write("Name : "+ ac.get(i).get(j).getName()+ System.getProperty("line.separator"));
                         myWriter.write("Mobile No. : "+ac.get(i).get(j).getMobileNo()+ System.getProperty("line.separator"));
                         myWriter.write("Email : "+ac.get(i).get(j).getEmail()+ System.getProperty("line.separator"));
-                        myWriter.write("Annoyance : "+ac.get(i).get(j).tryToAnnoy()+ System.getProperty("line.separator"));
                         myWriter.write("First met location & time: " +cA.getWhenWhere()+ System.getProperty("line.separator"));
                         myWriter.write("Other useful information: " +cA.getCircumstances()+ System.getProperty("line.separator"));
                         myWriter.write("First met circumstances: "+cA.getOtherInfo()+ System.getProperty("line.separator"));

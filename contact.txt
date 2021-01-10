@@ -1,49 +1,21 @@
 -----Personal Friends-----
-Name : name
-Mobile No. : 012012012012
-Email : email@gmail.com
-Annoyance : Not Annoying.
-Specific events: elo
-First Acquaintance context: mama
-First Acquaintance date: 12/12/2012
-
------Personal Friends-----
-Name : maam
-Mobile No. : 090978089687
-Email : 2@gmail.com
-Annoyance : Not Annoying.
-Specific events: sf
-First Acquaintance context: jk;l
-First Acquaintance date: 12/12/2012
+Name : iyuiyui
+Mobile No. : 67567567567
+Email : tyrtytry@yhfhfe.ererr
+Specific events: erwerwer
+First Acquaintance context: erer
+First Acquaintance date: 11/11/1111
 
 -----Relatives-----
-Name : nana
-Mobile No. : 12122121211221
-Email : emailmo@gmail.com
-Annoyance : Relatives are annoying.
-Relatives Birthday: 12/12/2012
-Last met date: 12/12/2019
+Name : sehfejwkfrewrff
+Mobile No. : 3243242423423
+Email : 434224@shjehjwe.ewrewrwe
+Relatives Birthday: 11/11/1111
+Last met date: 11/11/1111
 
 -----Professional Friends-----
-Name : mqu
-Mobile No. : 34345383
-Email : mail@gmail.com
-Annoyance : Not Annoying.
-Common Interests : interest
-
------Professional Friends-----
-Name : mumu
-Mobile No. : 000000000009
-Email : mu@gmail.com
-Annoyance : Not Annoying.
-Common Interests : com
-
------Casual Acquaintances-----
-Name : qmqm
-Mobile No. : 121314879876
-Email : mai@gmail.com
-Annoyance : Not Annoying.
-First met location & time: loc
-Other useful information: cirmcum
-First met circumstances: mia
+Name : ddassdasd
+Mobile No. : 3213231233
+Email : dadasd@fsfe.ewrwer
+Common Interests : ewrerrwe
 
