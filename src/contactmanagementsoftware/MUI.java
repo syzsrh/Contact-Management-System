@@ -86,6 +86,9 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
         if (addOrEditFlag) {
             op = "Add";
             jButton10.setText("Add");
+            jButton1.setVisible(false);
+            jButton2.setVisible(false);
+            jButton3.setVisible(false);
         } else {
             op = "Edit";
             jButton10.setText("Save");
@@ -93,6 +96,9 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
             name.setText(e.getName());
             mobile.setText(e.getMobileNo());
             email.setText(e.getEmail());
+            jButton1.setVisible(false);
+            jButton2.setVisible(false);
+            jButton3.setVisible(false);
             switch (categoryIndex) {
                 case 0:
                     PersonalFriends perF = (PersonalFriends) e;
@@ -198,6 +204,9 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
             jButton10.setText("Back to main menu");
             jButton11.setVisible(false);
             Operation_Menu.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Display Details", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("DialogInput", 1, 16)));
+            jButton1.setVisible(true);
+            jButton2.setVisible(true);
+            jButton3.setVisible(true);
         }
     }
 
@@ -269,8 +278,9 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
         jScrollPane6 = new javax.swing.JScrollPane();
         one = new javax.swing.JTextArea();
         jButton11 = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -456,7 +466,7 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(Main_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -479,7 +489,7 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
             Display_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Display_DetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(Display_DetailsLayout.createSequentialGroup()
                 .addGap(194, 194, 194)
@@ -490,7 +500,7 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
             Display_DetailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Display_DetailsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 481, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton9)
                 .addGap(21, 21, 21))
@@ -545,17 +555,24 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
             }
         });
 
-        jToggleButton1.setText("Annoy");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setText("Poke");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        jToggleButton2.setText("Not Annoy");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setText("Call");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Email");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
             }
         });
 
@@ -565,19 +582,22 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
             Operation_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Operation_MenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(Operation_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel4))
+                .addGroup(Operation_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Operation_MenuLayout.createSequentialGroup()
+                        .addGroup(Operation_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(Operation_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(Operation_MenuLayout.createSequentialGroup()
-                        .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                        .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(132, 132, 132))
                     .addGroup(Operation_MenuLayout.createSequentialGroup()
                         .addGroup(Operation_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -586,13 +606,12 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
                             .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(mobile, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(Operation_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(Operation_MenuLayout.createSequentialGroup()
-                                    .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jToggleButton2))
-                                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(135, Short.MAX_VALUE))))
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(Operation_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
+                                .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         Operation_MenuLayout.setVerticalGroup(
             Operation_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -622,13 +641,16 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(17, 17, 17)
                 .addGroup(Operation_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Operation_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton1)
-                    .addComponent(jToggleButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                    .addComponent(jLabel9)
+                    .addGroup(Operation_MenuLayout.createSequentialGroup()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3)
+                .addGap(18, 18, 18)
                 .addGroup(Operation_MenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton10)
                     .addComponent(jButton11))
@@ -885,10 +907,6 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
             JOptionPane.showMessageDialog(this, "Enter a name");
             return;
         }
-        if (!jToggleButton1.isSelected()&&!jToggleButton2.isSelected()) {
-            JOptionPane.showMessageDialog(this, "Choose Annoy / Not Annoy");
-            return;
-        }
         String Mobile = mobile.getText();
         String Email = email.getText();
         EmailChecker emailcheck = new EmailChecker(Email);
@@ -937,8 +955,6 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
                 personalF.setEvents(One);
                 personalF.setAContext(Two);
                 personalF.setADate(Three);
-                personalF.setAnnoyingAbility(new CantAnnoy());
-                System.out.println(personalF.tryToAnnoy());
                 if (addOrEditFlag) {
                     acquaintances.get(categoryIndex).add(personalF);
                 }
@@ -973,8 +989,6 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
                 rel.setEmail(Email);
                 rel.setBDate(One);
                 rel.setLDate(Two);
-                rel.setAnnoyingAbility(new CanAnnoy());
-                System.out.println(rel.tryToAnnoy());
                 if (addOrEditFlag) {
                     acquaintances.get(categoryIndex).add(rel);
                 }
@@ -996,8 +1010,6 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
                 proF.setMobileNo(Mobile);
                 proF.setEmail(Email);
                 proF.setCommonInterests(One);
-                proF.setAnnoyingAbility(new CantAnnoy());
-                System.out.println(proF.tryToAnnoy());
                 if (addOrEditFlag) {
                     acquaintances.get(categoryIndex).add(proF);
                 }
@@ -1031,8 +1043,6 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
                 ca.setWhenWhere(One);
                 ca.setCircumstances(Two);
                 ca.setOtherInfo(Three);
-                ca.setAnnoyingAbility(new CantAnnoy());
-                System.out.println(ca.tryToAnnoy());
                 if (addOrEditFlag) {
                     acquaintances.get(categoryIndex).add(ca);
                 }
@@ -1050,19 +1060,35 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
         Operation_Menu.setVisible(false);
     }//GEN-LAST:event_jButton11ActionPerformed
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        if(jToggleButton1.isSelected()){
-            jToggleButton2.setSelected(false);
-            System.out.println(jToggleButton1.getText());
-        }
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        //poke
+        Action c = new Action();
+        ContactPoke cp = new ContactPoke(c);
+        ContactManager cm = new ContactManager();
+        cm.setContact(cp);
+        JOptionPane.showMessageDialog(this, cm.process(acquaintances.get(categoryIndex).get(ArrayListIndex)));
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        if(jToggleButton2.isSelected()){
-            jToggleButton1.setSelected(false);
-            System.out.println(jToggleButton2.getText());
-        }
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        //call
+        Action c = new Action();
+        ContactCall cp = new ContactCall(c);
+        ContactManager cm = new ContactManager();
+        cm.setContact(cp);
+        JOptionPane.showMessageDialog(this, cm.process(acquaintances.get(categoryIndex).get(ArrayListIndex)));
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        //email
+        Action c = new Action();
+        ContactEmail cp = new ContactEmail(c);
+        ContactManager cm = new ContactManager();
+        cm.setContact(cp);
+        JOptionPane.showMessageDialog(this, cm.process(acquaintances.get(categoryIndex).get(ArrayListIndex)));
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1111,8 +1137,11 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
     private javax.swing.JTextPane details;
     private javax.swing.JButton editContact;
     private javax.swing.JTextField email;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
@@ -1132,8 +1161,6 @@ public class MUI extends javax.swing.JFrame implements AcquaintanceIterator {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
     private org.jdesktop.swingx.JXTable jXTable1;
     private javax.swing.JTextField mobile;
     private javax.swing.JTextField name;
