@@ -7,8 +7,7 @@ public class Acquaintances implements Serializable {
     private String Name;
     private String MobileNo;
     private String Email;
-    private Annoy annoyType;
-
+    
     Acquaintances() {
     }
 
@@ -34,17 +33,6 @@ public class Acquaintances implements Serializable {
 
     public String getEmail() {
         return Email;
-    }
-
-    public String tryToAnnoy() {
-
-        return annoyType.annoy();
-    }
-
-    public void setAnnoyingAbility(Annoy newAnnoyType) {
-
-        annoyType = newAnnoyType;
-
     }
 
 }
